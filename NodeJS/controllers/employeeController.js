@@ -14,9 +14,9 @@ router.get("/list", (req, res) => {
             res.send(docs);
 
         } else {
-            console.log("Error occurred while fetching Employee list.");
+            console.log("Error occurred while fetching Employee list. " + JSON.stringify(error));
         }
     });
 });
 
-module.exports= router;
+module.exports = router;
