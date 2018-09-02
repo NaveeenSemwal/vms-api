@@ -1,6 +1,9 @@
 const express = require("express");
 const bodyparser = require("body-parser");
 
+// This is to execute the configuration file.
+require("./config/config.js")
+
 // This is called Object destructing
 const { mongoose } = require("./db.js");
 
@@ -12,7 +15,7 @@ var app = express();
 // To get JSON body in request.
 app.use(bodyparser.json());
 
-app.listen(3000, function () {
+app.listen(process.env.PORT, function () {
     console.log("Server started at port : 3000");
 })
 
